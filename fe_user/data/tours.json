@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "location_start": "Tour Brunei",
+        "location_end": "TP. Hồ Chí Minh",
+        "date": "04/10/2025",
+        "hotel": "Khách sạn tương đương 3*",
+        "type": "plane",
+        "image": "https://vietourist.com.vn/public/frontend/uploads/kceditor/images/Royal%20Regalia%20brunei.jpg",
+        "price": "8,390,000 đ"
+    },
+    {
+        "id": 2,
+        "location_start": "Tour Đà Lạt",
+        "location_end": "TP. Hồ Chí Minh",
+        "date": "12/11/2025",
+        "hotel": "Khách sạn 4*",
+        "type": "car",
+        "image": "https://luhanhtour.com/wp-content/uploads/2019/01/Hi%CC%80nh-Ne%CC%82%CC%80n-%C4%90L-He%CC%80.jpg",
+        "price": "3,990,000 đ"
+    },
+    {
+        "id": 3,
+        "location_start": "Tour Nhật Bản",
+        "location_end": "TP. Hồ Chí Minh",
+        "date": "22/12/2025",
+        "hotel": "Khách sạn 5*",
+        "type": "plane",
+        "image": "https://tourdatviet.vn/wp-content/uploads/2022/09/tour-du-lich-nhat-ban-6-ngay-5-dem-2-1.jpg",
+        "price": "28,990,000 đ"
+    }
+]

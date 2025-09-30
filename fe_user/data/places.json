@@ -1,0 +1,17 @@
+[
+    {
+        "id": "1",
+        "name": "Paris",
+        "image": "https://picsum.photos/800/400?random=1"
+    },
+    {
+        "id": "2",
+        "name": "New York",
+        "image": "https://picsum.photos/800/400?random=2"
+    },
+    {
+        "id": "3",
+        "name": "Tokyo",
+        "image": "https://picsum.photos/800/400?random=3"
+    }
+]

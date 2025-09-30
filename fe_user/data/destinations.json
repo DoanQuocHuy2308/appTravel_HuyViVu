@@ -1,0 +1,65 @@
+[
+    {
+        "id": "1",
+        "region": "Miền Bắc",
+        "name": "Quảng Ninh",
+        "image": "https://images.unsplash.com/photo-1601132351057-43d9b0cf88be"
+    },
+    {
+        "id": "2",
+        "region": "Miền Bắc",
+        "name": "Hà Giang",
+        "image": "https://images.unsplash.com/photo-1592822279734-8c445bd97913"
+    },
+    {
+        "id": "3",
+        "region": "Miền Bắc",
+        "name": "Sa Pa",
+        "image": "https://images.unsplash.com/photo-1572509933723-0f7b0c40a4be"
+    },
+
+    {
+        "id": "4",
+        "region": "Miền Trung",
+        "name": "Huế",
+        "image": "https://images.unsplash.com/photo-1582793520024-293e223f405c"
+    },
+    {
+        "id": "5",
+        "region": "Miền Trung",
+        "name": "Đà Nẵng",
+        "image": "https://images.unsplash.com/photo-1604316823926-cb6e995e16b2"
+    },
+    {
+        "id": "6",
+        "region": "Miền Trung",
+        "name": "Hội An",
+        "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31"
+    },
+
+    {
+        "id": "7",
+        "region": "Miền Đông Nam Bộ",
+        "name": "Vũng Tàu",
+        "image": "https://images.unsplash.com/photo-1591427583645-579e9d0b0a01"
+    },
+    {
+        "id": "8",
+        "region": "Miền Đông Nam Bộ",
+        "name": "Đảo Côn Đảo",
+        "image": "https://images.unsplash.com/photo-1620259272702-6bfe06ab93b8"
+    },
+
+    {
+        "id": "9",
+        "region": "Miền Tây",
+        "name": "Cần Thơ",
+        "image": "https://images.unsplash.com/photo-1617088559328-d4303b2500fb"
+    },
+    {
+        "id": "10",
+        "region": "Miền Tây",
+        "name": "Phú Quốc",
+        "image": "https://images.unsplash.com/photo-1594187337997-bc7fd2bd0661"
+    }
+]

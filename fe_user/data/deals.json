@@ -1,0 +1,54 @@
+[
+    {
+        "id": 1,
+        "title": "Khám phá đất nước Brunei",
+        "departure": "TP. Hồ Chí Minh",
+        "code": "NNSGN245-014-250925BI-V-1",
+        "date": "25/09/2025",
+        "duration": "4N3Đ",
+        "oldPrice": "13,990,000 đ",
+        "newPrice": "13,190,000 đ",
+        "slots": 4,
+        "image": "https://tse1.mm.bing.net/th/id/OIP.dzUiMkgpvlS7yusgL5OCgQHaE0?pid=Api&P=0&h=180",
+        "countdown": "02:50:10"
+    },
+    {
+        "id": 2,
+        "title": "Tham quan Singapore - Malaysia",
+        "departure": "TP. Hồ Chí Minh",
+        "code": "NNSGN678-025-151025SG-MY-V-1",
+        "date": "15/10/2025",
+        "duration": "5N4Đ",
+        "oldPrice": "17,490,000 đ",
+        "newPrice": "16,490,000 đ",
+        "slots": 6,
+        "image": "https://tse3.mm.bing.net/th/id/OIP.vmuw4DZHx054QBHVGsrOngHaFj?pid=Api&P=0&h=180",
+        "countdown": "03:20:45"
+    },
+    {
+        "id": 3,
+        "title": "Du lịch Đài Loan mùa thu",
+        "departure": "TP. Hồ Chí Minh",
+        "code": "NNSGN123-054-300925TW-V-1",
+        "date": "30/09/2025",
+        "duration": "4N3Đ",
+        "oldPrice": "12,990,000 đ",
+        "newPrice": "11,990,000 đ",
+        "slots": 8,
+        "image": "https://tse4.mm.bing.net/th/id/OIP.-B5LmWgLy1MsPFtxt_YCUQHaD2?pid=Api&P=0&h=180",
+        "countdown": "04:10:20"
+    },
+    {
+        "id": 4,
+        "title": "Khám phá Nhật Bản – Tokyo – Núi Phú Sĩ",
+        "departure": "TP. Hồ Chí Minh",
+        "code": "NNSGN456-011-101125JP-V-1",
+        "date": "10/11/2025",
+        "duration": "6N5Đ",
+        "oldPrice": "39,990,000 đ",
+        "newPrice": "37,990,000 đ",
+        "slots": 3,
+        "image": "https://tse1.mm.bing.net/th/id/OIP.YXygwN6V9qZ_e-y3xiMnIwHaE7?pid=Api&P=0&h=180",
+        "countdown": "01:15:30"
+    }
+]

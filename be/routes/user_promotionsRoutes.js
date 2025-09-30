@@ -1,0 +1,9 @@
+var express = require('express');
+var router = express.Router();
+const user_promotions = require('../controllers/ctrlUser_Promotions');
+router.get('/getAllUser_Promotions', user_promotions.getAllUser_Promotions);
+router.get('/getUser_PromotionsById', user_promotions.getUser_PromotionsById);
+router.post('/createUser_Promotions', user_promotions.createUser_Promotions);
+router.put('/updateUser_Promotions', user_promotions.updateUser_Promotions);
+router.delete('/deleteUser_Promotions', user_promotions.deleteUser_Promotions);
+module.exports = router;
