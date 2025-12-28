@@ -30,16 +30,16 @@ export default function TabLayout() {
       }}
     >
       <Tabs.Screen
-        name="contact"
+        name="index"
         options={{
-          title: "Contact",
+          title: "Home",
           tabBarIcon: ({ size, focused }) => (
             <View
               className={`w-[40px] h-[40px] rounded-full items-center justify-center ${focused ? "bg-[#318b89]" : ""
                 }`}
             >
               <Ionicons
-                name={focused ? "contract" : "contract-outline"}
+                name={focused ? "home" : "home-outline"}
                 size={size}
                 color={focused ? "#fff" : "#9ca3af"}
               />
@@ -67,24 +67,6 @@ export default function TabLayout() {
         }}
       />
 
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: "Home",
-          tabBarIcon: ({ size, focused }) => (
-            <View
-              className={`w-[40px] h-[40px] rounded-full items-center justify-center ${focused ? "bg-[#318b89]" : ""
-                }`}
-            >
-              <Ionicons
-                name={focused ? "home" : "home-outline"}
-                size={size}
-                color={focused ? "#fff" : "#9ca3af"}
-              />
-            </View>
-          ),
-        }}
-      />
 
       <Tabs.Screen
         name="follows"
@@ -105,6 +87,24 @@ export default function TabLayout() {
         }}
       />
 
+      <Tabs.Screen
+        name="contact"
+        options={{
+          title: "Contact",
+          tabBarIcon: ({ size, focused }) => (
+            <View
+              className={`w-[40px] h-[40px] rounded-full items-center justify-center ${focused ? "bg-[#318b89]" : ""
+                }`}
+            >
+              <Ionicons
+                name={focused ? "contract" : "contract-outline"}
+                size={size}
+                color={focused ? "#fff" : "#9ca3af"}
+              />
+            </View>
+          ),
+        }}
+      />
       <Tabs.Screen
         name="settings"
         options={{

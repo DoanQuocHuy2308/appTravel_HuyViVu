@@ -18,7 +18,9 @@ async function connect(){
         console.log('Connected to MySQL');
     } catch (error) {
         console.error('Error connecting to MySQL:', error);
+        process.exit(1); // Exit process if database connection fails
     }
 }
 connect();
+
 module.exports = connection; 

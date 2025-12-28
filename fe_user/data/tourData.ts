@@ -1,28 +1,35 @@
-import { Tour } from "@/types/tourType";
+import { TourDetail } from "@/types/tourType";
 
-export const tourData: Tour = {
+export const tourData: TourDetail = {
     id: 1,
-    title: "Khám Phá Kỳ Quan Vịnh Hạ Long - Du Thuyền 5 Sao",
+    name: "Khám Phá Kỳ Quan Vịnh Hạ Long - Du Thuyền 5 Sao",
     location: "Hạ Long, Quảng Ninh",
     duration: "2 ngày 1 đêm",
     rating: 4.8,
-    reviews: 128,
-    price: "2.500.000",
-    images: [
-        "https://images.unsplash.com/photo-1578994528532-15386f2a35a6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1557636395-2a2977423984?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1566416295478-831c19b626a5?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    ],
+    price: 2500000,
+    image: "https://images.unsplash.com/photo-1578994528532-15386f2a35a6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     description: "Trải nghiệm một hành trình khó quên trên Vịnh Hạ Long, di sản thiên nhiên thế giới. Tận hưởng sự sang trọng trên du thuyền 5 sao, khám phá những hang động kỳ vĩ, chèo thuyền kayak giữa làn nước trong xanh và thưởng thức hải sản tươi ngon.",
     highlights: [
-        "Du thuyền 5 sao sang trọng với đầy đủ tiện nghi.",
-        "Tham quan Hang Sửng Sốt, một trong những hang động đẹp nhất.",
-        "Chèo thuyền Kayak hoặc đi thuyền nan tại Hang Luồn.",
-        "Tắm biển và leo núi tại đảo Ti Tốp.",
-        "Tham gia lớp học nấu ăn và câu mực đêm trên du thuyền."
+        "Khám phá Vịnh Hạ Long - Di sản thiên nhiên thế giới",
+        "Trải nghiệm du thuyền 5 sao sang trọng",
+        "Chèo thuyền kayak khám phá hang động",
+        "Thưởng thức hải sản tươi ngon",
+        "Ngắm hoàng hôn tuyệt đẹp trên vịnh"
     ],
-    includes: ["Phòng nghỉ đêm trên du thuyền", "Các bữa ăn theo chương trình", "Vé tham quan các điểm", "Thuyền Kayak", "Hướng dẫn viên"],
-    excludes: ["Đồ uống cá nhân", "Chi phí cá nhân", "VAT"],
+    includes: [
+        "Vé tham quan Vịnh Hạ Long",
+        "Ăn uống trên du thuyền (2 bữa trưa, 1 bữa tối, 1 bữa sáng)",
+        "Hướng dẫn viên chuyên nghiệp",
+        "Thuyền kayak và phao cứu sinh",
+        "Xe đưa đón từ Hà Nội"
+    ],
+    excludes: [
+        "Đồ uống có cồn",
+        "Chi phí cá nhân",
+        "Bảo hiểm du lịch",
+        "Tiền tip cho hướng dẫn viên",
+        "Các hoạt động không có trong chương trình"
+    ],
     itinerary: [
         {
             day: "Ngày 1",

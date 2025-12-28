@@ -1,35 +1,61 @@
-import React from 'react';
-import { View, Text, SectionList } from 'react-native';
-import { ItineraryDay } from '@/types/tourType';
+import React, { useState } from "react";
+import { View, Text, TouchableOpacity, LayoutAnimation, UIManager, Platform, ScrollView } from "react-native";
+import { ChevronDown, ChevronUp } from "lucide-react-native";
 
-interface ItineraryTabProps {
-    data: ItineraryDay[];
+if (Platform.OS === "android" && UIManager.setLayoutAnimationEnabledExperimental) {
+    UIManager.setLayoutAnimationEnabledExperimental(true);
 }
 
-const ItineraryTab: React.FC<ItineraryTabProps> = ({ data }) => (
-    <SectionList
-        sections={data}
-        keyExtractor={(item, index) => item.time + index}
-        scrollEnabled={false}
-        renderSectionHeader={({ section: { day, title } }) => (
-            <View className="mb-4 mt-2">
-                <Text className="text-xl font-bold text-gray-800">{day}: {title}</Text>
-                <View className="h-0.5 bg-gray-200 mt-2" />
-            </View>
-        )}
-        renderItem={({ item, index, section }) => (
-            <View className="flex-row mb-4">
-                <View className="items-center mr-4">
-                    <View className="w-4 h-4 rounded-full bg-[#08703f] border-2 border-white shadow" />
-                    {index < section.data.length - 1 && <View className="w-0.5 flex-1 bg-gray-300" />}
-                </View>
-                <View className="flex-1 pb-4">
-                    <Text className="text-base font-semibold text-[#08703f]">{item.time}</Text>
-                    <Text className="text-base text-gray-600 mt-1">{item.activity}</Text>
-                </View>
-            </View>
-        )}
-    />
-);
+export default function TimelineAccordion({ data }: { data: any[] }) {
+    const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
-export default ItineraryTab;
+    const toggleExpand = (index: number) => {
+        LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
+        setExpandedIndex(expandedIndex === index ? null : index);
+    };
+
+    return (
+        <ScrollView className="flex-1 bg-gray-50 p-4" showsVerticalScrollIndicator={false}>
+            {data.map((item, index) => {
+                const isExpanded = expandedIndex === index;
+                return (
+                    <View key={index} className="flex-row items-start mb-6">
+                        <View className="w-8 items-center">
+                            <View className="w-4 h-4 bg-emerald-500 rounded-full mt-1" />
+                            {index < data.length - 1 && <View className="w-0.5 bg-gray-300 flex-1 mt-1" />}
+                        </View>
+                        <TouchableOpacity
+                            activeOpacity={0.9}
+                            onPress={() => toggleExpand(index)}
+                            className={`flex-1 bg-white p-4 rounded-2xl shadow-md ml-3 border ${isExpanded ? "border-emerald-400" : "border-transparent"
+                                }`}
+                        >
+                            <View className="flex-row justify-between items-center">
+                                <View className="flex-1 pr-2">
+                                    <Text className="text-sm text-emerald-700 font-bold mb-1">
+                                        Ngày {item.day_number}
+                                    </Text>
+                                    <Text className="text-base font-semibold text-gray-900">
+                                        Địa điểm: {item.title}
+                                    </Text>
+                                </View>
+                                {isExpanded ? (
+                                    <ChevronUp size={20} color="#065f46" />
+                                ) : (
+                                    <ChevronDown size={20} color="#065f46" />
+                                )}
+                            </View>
+                            {isExpanded && (
+                                <View className="mt-3 border-t border-gray-200 pt-3">
+                                    <Text className="text-gray-700 leading-6 text-sm">
+                                        {item.description}
+                                    </Text>
+                                </View>
+                            )}
+                        </TouchableOpacity>
+                    </View>
+                );
+            })}
+        </ScrollView>
+    );
+}

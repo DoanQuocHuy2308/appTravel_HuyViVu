@@ -1,9 +1,10 @@
 var express = require('express');
 var router = express.Router();
+var upload = require('../middleware/upload');
 const locations = require('../controllers/ctrlLocations');
 router.get('/getAllLocations', locations.getAllLocations);
 router.get('/getLocationsById', locations.getLocationsById);
-router.post('/createLocations', locations.createLocations);
-router.put('/updateLocations', locations.updateLocations);
+router.post('/createLocations', upload.upload.single('image'), locations.createLocations);
+router.put('/updateLocations', upload.upload.single('image'), locations.updateLocations);
 router.delete('/deleteLocations', locations.deleteLocations);
 module.exports = router;

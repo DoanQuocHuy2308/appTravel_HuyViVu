@@ -1,0 +1,10 @@
+var express = require('express');
+var router = express.Router();
+const tour_notes = require('../controllers/ctrlTour_Notes');
+router.get('/getAllTour_Notes', tour_notes.getAllTour_Notes);
+router.get('/getTour_NotesById', tour_notes.getTour_NotesById);
+router.get('/getTour_NotesByIdTour', tour_notes.getTour_NotesByIdTour);
+router.post('/createTour_Notes', tour_notes.createTour_Notes);
+router.put('/updateTour_Notes', tour_notes.updateTour_Notes);
+router.delete('/deleteTour_Notes', tour_notes.deleteTour_Notes);
+module.exports = router;

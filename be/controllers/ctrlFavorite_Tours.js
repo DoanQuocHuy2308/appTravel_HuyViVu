@@ -2,8 +2,8 @@ const Favorite_Tours = require('../models/favorite_tours')
 
 exports.getAllFavorite_Tours = async (req,res) => {
 	try{
-
-		const favorite_tours = await Favorite_Tours.getAllFavorite_Tours();
+		const {id} = req.query;
+		const favorite_tours = await Favorite_Tours.getAllFavorite_Tours(id);
 		res.status(200).send(favorite_tours);
 	} catch (error) {
 

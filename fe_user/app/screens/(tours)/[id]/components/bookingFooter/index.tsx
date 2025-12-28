@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity } from 'react-native';
 import { Heart, ChevronRight } from 'lucide-react-native';
 
 interface BookingFooterProps {
-    price: string;
+    price: number;
     isWishlisted: boolean;
     onPressBooking: () => void;
     onPressWishlist: () => void;
@@ -28,7 +28,7 @@ const BookingFooter: React.FC<BookingFooterProps> = ({ price, isWishlisted, onPr
                     </TouchableOpacity>
                     <View className="ml-4">
                         <Text className="text-gray-500 text-sm">Giá mỗi khách</Text>
-                        <Text className="text-2xl font-bold text-[#08703f]">{price}đ</Text>
+                        <Text className="text-2xl font-bold text-[#08703f]">{price.toLocaleString('vi-VN')} ₫</Text>
                     </View>
                 </View>
                 <TouchableOpacity

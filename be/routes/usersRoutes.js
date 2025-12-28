@@ -1,9 +1,12 @@
 var express = require('express');
 var router = express.Router();
 const users = require('../controllers/ctrlUsers');
+const uploads = require('../middleware/upload');
 router.get('/getAllUsers', users.getAllUsers);
 router.get('/getUsersById', users.getUsersById);
-router.post('/createUsers', users.createUsers);
-router.put('/updateUsers', users.updateUsers);
+router.post('/createUsers', uploads.upload.single('image'), users.createUsers);
+router.put('/updateUsers', uploads.upload.single('image'), users.updateUsers);
 router.delete('/deleteUsers', users.deleteUsers);
+router.put('/updateUserPoints', users.updateUserPoints);
+router.put('/updateUserRole', users.updateUserRole);
 module.exports = router;

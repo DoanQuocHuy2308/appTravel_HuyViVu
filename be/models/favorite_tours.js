@@ -1,9 +1,9 @@
 const db = require('../config/db');
 
 class Favorite_Tours {
-	static async getAllFavorite_Tours() {
-		const [result] = await db.query('SELECT * FROM favorite_tours');
-		return result;
+	static async getAllFavorite_Tours(id) {
+		const [result] = await db.execute('Call getAllTourFavorite(?)', [id]);
+		return result[0];
 	}
 
 	static async getFavorite_ToursById(id) {

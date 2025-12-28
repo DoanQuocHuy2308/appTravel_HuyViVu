@@ -23,6 +23,16 @@ exports.getTour_ScheduleById = async (req, res) =>{
 	};
 };
 
+exports.getTour_ScheduleByIdTour = async (req, res) => {
+
+	try {
+		const tour_schedule = await Tour_Schedule.getTour_ScheduleByIdTour(req.query.id);
+		res.status(200).send(tour_schedule);
+	} catch (error) {
+		res.status(500).send({ message: error.message });
+	};
+};
+
 exports.createTour_Schedule = async (req, res) => {
 	try {
 		const { tour_id, day_number, title, description } = req.body;

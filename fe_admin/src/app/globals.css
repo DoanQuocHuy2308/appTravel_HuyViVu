@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+:root {
+  /* Elegant Color System 2024 */
+  --teal-700: #0f766e;
+  --teal-600: #0d9488;
+  --teal-500: #14b8a6;
+  --teal-300: #5eead4;
+  --teal-100: #ccfbf1;
+  
+  --neutral-white: #ffffff;
+  --neutral-50: #f8fafc;
+  --neutral-200: #e2e8f0;
+  --neutral-500: #64748b;
+  --neutral-700: #334155;
+  --neutral-800: #1e293b;
+  
+  --accent-blue: #2563eb;
+  --accent-yellow: #eab308;
+  --accent-orange: #f97316;
+  
+  /* Legacy support */
+  --background: var(--neutral-white);
+  --foreground: var(--teal-700);
+  --beige-light: var(--neutral-50);
+  --beige-medium: var(--neutral-200);
+  --green-dark: var(--teal-700);
+  --green-medium: var(--teal-600);
+  --green-light: var(--teal-100);
+  --green-accent: var(--teal-500);
+  --slate-soft: var(--neutral-500);
+  --shadow-teal: rgba(15, 118, 110, 0.1);
+  
+  /* Elegant shadows */
+  --shadow-sm: 0 1px 3px 0 rgba(15, 118, 110, 0.1);
+  --shadow-md: 0 4px 12px 0 rgba(15, 118, 110, 0.15);
+  --shadow-lg: 0 10px 25px -3px rgba(15, 118, 110, 0.2);
+  --shadow-xl: 0 20px 40px -5px rgba(15, 118, 110, 0.25);
+  --shadow-glow: 0 0 20px rgba(20, 184, 166, 0.3);
+  
+  /* Sophisticated glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.95);
+  --glass-border: rgba(255, 255, 255, 0.4);
+  --glass-shadow: 0 8px 32px rgba(15, 118, 110, 0.1);
+  --glass-blur: blur(16px);
+  
+  /* Elegant glow effects */
+  --glow-teal: 0 0 15px rgba(20, 184, 166, 0.4);
+  --glow-blue: 0 0 15px rgba(37, 99, 235, 0.4);
+  --glow-yellow: 0 0 15px rgba(234, 179, 8, 0.4);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Custom animations for register page */
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* Smooth transitions for form elements */
+.group:hover .p-inputwrapper {
+  transform: translateY(-2px);
+  transition: transform 0.3s ease;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #0f766e, #0d9488, #14b8a6);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(15, 118, 110, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #0d9488, #0f766e, #0d9488);
+  box-shadow: 0 6px 16px rgba(15, 118, 110, 0.3);
+}

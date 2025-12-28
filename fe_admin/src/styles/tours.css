@@ -1,0 +1,248 @@
+/* Custom styles for Tours Management Page */
+
+/* DataTable customizations - Elegant Design */
+.p-datatable .p-datatable-header {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #ffffff 100%);
+    border: none;
+    border-bottom: 2px solid #0f766e;
+    box-shadow: 0 4px 12px rgba(15, 118, 110, 0.1);
+}
+
+.p-datatable .p-datatable-thead > tr > th {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #ffffff 100%);
+    border-bottom: 2px solid #0f766e;
+    font-weight: 700;
+    color: #0f766e;
+    padding: 1.25rem 1rem;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    letter-spacing: 0.1em;
+}
+
+.p-datatable .p-datatable-tbody > tr {
+    transition: all 0.2s ease-in-out;
+}
+
+.p-datatable .p-datatable-tbody > tr:hover {
+    background: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(15, 118, 110, 0.15);
+    border-left: 4px solid #14b8a6;
+}
+
+.p-datatable .p-datatable-tbody > tr.p-datatable-row-selected {
+    background: linear-gradient(135deg, #ccfbf1 0%, #a7f3d0 100%) !important;
+    border-left: 4px solid #0f766e;
+    box-shadow: 0 4px 15px rgba(15, 118, 110, 0.2);
+}
+
+/* Paginator styling - Elegant Design */
+.p-paginator {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #ffffff 100%);
+    border: 1px solid #0f766e;
+    border-radius: 0 0 20px 20px;
+    padding: 1.5rem;
+    box-shadow: 0 -4px 12px rgba(15, 118, 110, 0.1);
+}
+
+.p-paginator .p-paginator-page {
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 600;
+}
+
+.p-paginator .p-paginator-page:hover {
+    background: linear-gradient(135deg, #0f766e 0%, #0d9488 100%);
+    color: white;
+    transform: scale(1.1) translateY(-2px);
+    box-shadow: 0 6px 20px rgba(15, 118, 110, 0.3);
+}
+
+.p-paginator .p-paginator-page.p-highlight {
+    background: linear-gradient(135deg, #0f766e 0%, #0d9488 50%, #14b8a6 100%);
+    border: none;
+    box-shadow: 0 6px 20px rgba(15, 118, 110, 0.3);
+    transform: scale(1.05);
+}
+
+/* Button hover effects */
+.p-button {
+    transition: all 0.2s ease-in-out;
+}
+
+.p-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Badge styling */
+.p-badge {
+    font-weight: 600;
+    border-radius: 6px;
+}
+
+/* Rating component */
+.p-rating .p-rating-icon {
+    color: #fbbf24;
+    transition: all 0.2s ease-in-out;
+}
+
+.p-rating .p-rating-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Chip styling */
+.p-chip {
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+/* Tag styling */
+.p-tag {
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+/* Dropdown styling */
+.p-dropdown {
+    border-radius: 12px;
+    transition: all 0.2s ease-in-out;
+}
+
+.p-dropdown:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.p-dropdown-panel {
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+}
+
+/* Input styling */
+.p-inputtext {
+    border-radius: 12px;
+    transition: all 0.2s ease-in-out;
+}
+
+.p-inputtext:focus {
+    box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.15);
+    border-color: #0f766e;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    box-shadow: 0 0 15px rgba(20, 184, 166, 0.3);
+}
+
+/* Toast styling */
+.p-toast {
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Dialog styling */
+.p-dialog {
+    border-radius: 16px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.p-dialog-header {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #ffffff 100%);
+    border-radius: 20px 20px 0 0;
+    border-bottom: 2px solid #0f766e;
+    box-shadow: 0 4px 12px rgba(15, 118, 110, 0.1);
+}
+
+/* Confirm dialog styling */
+.p-confirm-dialog {
+    border-radius: 16px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+/* Loading spinner */
+.p-progress-spinner {
+    width: 3rem;
+    height: 3rem;
+}
+
+.p-progress-spinner-circle {
+    stroke: #166534;
+    stroke-width: 3;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.5s ease-out;
+}
+
+/* Stats cards hover effect */
+.stats-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stats-card:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Gradient text - Elegant Design */
+.gradient-text {
+    background: linear-gradient(135deg, #0f766e 0%, #0d9488 50%, #14b8a6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 2px 4px rgba(15, 118, 110, 0.2));
+}
+
+/* Glass effect */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .p-datatable .p-datatable-thead > tr > th,
+    .p-datatable .p-datatable-tbody > tr > td {
+        padding: 0.5rem 0.25rem;
+        font-size: 0.875rem;
+    }
+    
+    .stats-card {
+        padding: 1rem;
+    }
+    
+    .stats-card .text-3xl {
+        font-size: 1.5rem;
+    }
+}

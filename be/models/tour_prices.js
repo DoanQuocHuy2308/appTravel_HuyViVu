@@ -11,13 +11,13 @@ class Tour_Prices {
 		return result[0];
 	}
 
-	static async createTour_Prices(tour_id, start_date, end_date, price) {
-		const [result] = await db.execute('INSERT INTO tour_prices (tour_id, start_date, end_date, price) VALUES (?, ?, ?, ?)', [ tour_id, start_date, end_date, price ]);
+	static async createTour_Prices(tour_id, start_date, end_date, oldPrice, price) {
+		const [result] = await db.execute('INSERT INTO tour_prices (tour_id, start_date, end_date, oldPrice, price) VALUES (?, ?, ?, ?, ?)', [ tour_id, start_date, end_date, oldPrice, price ]);
 		return result.insertId;
 	}
 
-	static async updateTour_Prices(id, tour_id, start_date, end_date, price) {
-		const [result] = await db.execute("UPDATE tour_prices SET tour_id = ?, start_date = ?, end_date = ?, price = ? WHERE id = ?", [tour_id, start_date, end_date, price, id]);
+	static async updateTour_Prices(id, tour_id, start_date, end_date, oldPrice, price) {
+		const [result] = await db.execute("UPDATE tour_prices SET tour_id = ?, start_date = ?, end_date = ?, oldPrice = ?, price = ? WHERE id = ?", [tour_id, start_date, end_date, oldPrice, price, id]);
 		return result.affectedRows > 0;
 	}
 

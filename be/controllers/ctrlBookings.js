@@ -1,69 +1,107 @@
-const Bookings = require('../models/bookings')
+const Bookings = require('../models/bookings');
 
-exports.getAllBookings = async (req,res) => {
-	try{
-
+exports.getAllBookings = async (req, res) => {
+	try {
 		const bookings = await Bookings.getAllBookings();
 		res.status(200).send(bookings);
 	} catch (error) {
-
 		res.status(500).send({ message: error.message });
 	};
 };
 
-exports.getBookingsById = async (req, res) =>{
-	try{
-
+exports.getBookingsById = async (req, res) => {
+	try {
 		const bookings = await Bookings.getBookingsById(req.query.id);
-		if (!bookings) return res.status(404).send({ message: 'bookings không tìm thấy' });
 		res.status(200).send(bookings);
 	} catch (error) {
-
 		res.status(500).send({ message: error.message });
 	};
 };
 
-exports.createBookings = async (req, res) => {
+exports.booking = async (req, res) => {
 	try {
-		const { user_id, tour_id, adults, children, infants, notes, booking_date, start_date, end_date, total_price, status } = req.body;
-		if (!user_id || !tour_id || !adults || !children || !infants || !notes || !booking_date || !start_date || !end_date || !total_price || !status) {
-			return res.status(400).json({ message: 'Vui lòng cung cấp đầy đủ thông tin bắt buộc' });
+		const { user_id, tour_id, adults, children, infants, start_date, end_date, notes, promotion_id } = req.body;
+		if (!user_id || !tour_id || !adults || !start_date || !end_date) {
+			return res.status(400).send({ 
+				message: 'Missing required fields',
+				details: {
+					user_id: !user_id ? 'Required' : 'OK',
+					tour_id: !tour_id ? 'Required' : 'OK',
+					adults: !adults ? 'Required' : 'OK',
+					start_date: !start_date ? 'Required' : 'OK',
+					end_date: !end_date ? 'Required' : 'OK'
+				}
+			});
 		}
-		const bookingsId = await Bookings.createBookings( user_id, tour_id, adults, children, infants, notes, booking_date, start_date, end_date, total_price, status );
-		res.status(201).send({ message: 'Tạo thành công', bookingsId });
+		
+		if (adults < 1) {
+			return res.status(400).send({ message: 'At least 1 adult is required' });
+		}
+		
+		// Ensure children and infants are numbers
+		const childrenCount = children || 0;
+		const infantsCount = infants || 0;
+		
+		const booking = await Bookings.booking(user_id, tour_id, adults, childrenCount, infantsCount, start_date, end_date, notes, promotion_id);
+		res.status(200).send(booking);
 	} catch (error) {
-		res.status(500).send({ message: 'Lỗi server', error: error.message });
+		res.status(500).send({ message: error.message });
+	};
+};
+exports.updateBooking = async (req, res) => {
+	try {
+		const { id, adults, children, infants, notes, status, promotion_code } = req.body;
+		console.log('Update booking request:', { id, adults, children, infants, notes, status, promotion_code });
+		const booking = await Bookings.updateBooking(id, adults, children, infants, notes, status, promotion_code);
+		res.status(200).send(booking);
+	} catch (error) {
+		console.error('Update booking error:', error);
+		res.status(500).send({ message: error.message });
+	};
+};
+exports.deleteBooking = async (req, res) => {
+	try {
+		const { id } = req.body;
+		const booking = await Bookings.deleteBooking(id);
+		res.status(200).send(booking);
+	} catch (error) {
+		res.status(500).send({ message: error.message });
+	};
+};
+exports.getBookingsByUserId = async (req, res) => {
+	try {
+		const { user_id } = req.query;
+		const bookings = await Bookings.getBookingsByUserId(user_id);
+		res.status(200).send(bookings);
+	} catch (error) {
+		res.status(500).send({ message: error.message });
+	};
+};
+exports.getBookingsByTourId = async (req, res) => {
+	try {
+		const { tour_id } = req.query;
+		const bookings = await Bookings.getBookingsByTourId(tour_id);
+		res.status(200).send(bookings);
+	} catch (error) {
+		res.status(500).send({ message: error.message });
+	};
+};
+exports.getBookingsByStatus = async (req, res) => {
+	try {
+		const { status } = req.query;
+		const bookings = await Bookings.getBookingsByStatus(status);
+		res.status(200).send(bookings);
+	} catch (error) {
+		res.status(500).send({ message: error.message });
 	};
 };
 
-exports.updateBookings = async (req, res) => {
+exports.getBookingsByDateRange = async (req, res) => {
 	try {
-		const { id } = req.query;
-		const { user_id, tour_id, adults, children, infants, notes, booking_date, start_date, end_date, total_price, status } = req.body;
-		if (!user_id ||!tour_id ||!adults ||!children ||!infants ||!notes ||!booking_date ||!start_date ||!end_date ||!total_price ||!status) {
-			return res.status(400).send({ message: 'Vui lòng cung cấp đầy đủ thông tin bắt buộc' });
-		}
-		const updatedBookings = await Bookings.updateBookings(id,user_id, tour_id, adults, children, infants, notes, booking_date, start_date, end_date, total_price, status);
-		if (!updatedBookings){
-			return res.status(404).send({ message: 'Bookings not found' });
-		}
-		res.status(200).send({ message: 'Cập nhật Bookings thành công', updatedBookings });
+		const { start_date, end_date } = req.query;
+		const bookings = await Bookings.getBookingsByDateRange(start_date, end_date);
+		res.status(200).send(bookings);
 	} catch (error) {
-		res.status(500).send({ message: 'Lỗi server', error: error.message });
+		res.status(500).send({ message: error.message });
 	};
 };
-
-exports.deleteBookings = async (req, res) => {
-	try {
-		const { id } = req.query;
-		const deletedBookings = await Bookings.deleteBookings(id);
-		if (!deletedBookings)
-		{
-			return res.status(404).send({message: 'Bookings not found' });
-		}
-		res.status(200).send({ message: 'Xóa Bookings  thành công', deletedBookings });
-	} catch (error) {
-		res.status(500).send({ message: 'Lỗi server', error: error.message });
-	};
-};
-

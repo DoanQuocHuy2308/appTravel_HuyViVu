@@ -1,0 +1,173 @@
+/* Custom styles for nguoidung page */
+
+.p-datatable {
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+    border: 1px solid #e5e7eb !important;
+}
+
+.p-datatable .p-datatable-header {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%) !important;
+    border-bottom: 2px solid #d1d5db !important;
+    padding: 1.5rem !important;
+}
+
+.p-datatable .p-datatable-thead > tr > th {
+    background: linear-gradient(135deg, #16a34a 0%, #15803d 100%) !important;
+    color: white !important;
+    font-weight: 600 !important;
+    font-size: 0.875rem !important;
+    padding: 1rem 0.75rem !important;
+    border: none !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+}
+
+.p-datatable .p-datatable-tbody > tr {
+    transition: all 0.2s ease !important;
+    border-bottom: 1px solid #f3f4f6 !important;
+}
+
+.p-datatable .p-datatable-tbody > tr:hover {
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.15) !important;
+}
+
+.p-datatable .p-datatable-tbody > tr > td {
+    padding: 1rem 0.75rem !important;
+    border: none !important;
+    vertical-align: middle !important;
+}
+
+.p-datatable .p-datatable-tbody > tr:nth-child(even) {
+    background: #fafafa !important;
+}
+
+.p-datatable .p-datatable-tbody > tr:nth-child(even):hover {
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%) !important;
+}
+
+/* Selection column styling */
+.p-datatable .p-selection-column {
+    width: 3rem !important;
+    text-align: center !important;
+}
+
+.p-datatable .p-datatable-tbody > tr > td.p-selection-column {
+    padding: 0.75rem !important;
+}
+
+/* Action buttons styling */
+.p-datatable .p-datatable-tbody > tr > td:last-child {
+    text-align: center !important;
+}
+
+/* Paginator styling */
+.p-paginator {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%) !important;
+    border-top: 1px solid #d1d5db !important;
+    padding: 1rem 1.5rem !important;
+    border-radius: 0 0 12px 12px !important;
+}
+
+.p-paginator .p-paginator-page {
+    border-radius: 8px !important;
+    margin: 0 2px !important;
+    transition: all 0.2s ease !important;
+}
+
+.p-paginator .p-paginator-page:hover {
+    background: #16a34a !important;
+    color: white !important;
+    transform: translateY(-1px) !important;
+}
+
+.p-paginator .p-paginator-page.p-highlight {
+    background: linear-gradient(135deg, #16a34a 0%, #15803d 100%) !important;
+    color: white !important;
+    box-shadow: 0 2px 4px rgba(34, 197, 94, 0.3) !important;
+}
+
+/* Empty state styling */
+.p-datatable .p-datatable-emptymessage {
+    padding: 3rem 1rem !important;
+    text-align: center !important;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%) !important;
+}
+
+/* Loading state */
+.p-datatable .p-datatable-loading-overlay {
+    background: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(4px) !important;
+}
+
+/* Frozen columns */
+.p-datatable .p-datatable-tbody > tr > td.p-frozen-column {
+    background: white !important;
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+    .p-datatable .p-datatable-thead > tr > th,
+    .p-datatable .p-datatable-tbody > tr > td {
+        padding: 0.75rem 0.5rem !important;
+        font-size: 0.8rem !important;
+    }
+    
+    .p-datatable .p-datatable-header {
+        padding: 1rem !important;
+    }
+}
+
+/* Custom dropdown styles */
+.custom-dropdown-panel {
+    border-radius: 12px !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+    border: 1px solid #e5e7eb !important;
+    margin-top: 8px !important;
+}
+
+.custom-dropdown-panel .p-dropdown-item {
+    padding: 12px 16px !important;
+    border-radius: 8px !important;
+    margin: 4px 8px !important;
+    transition: all 0.2s ease !important;
+}
+
+.custom-dropdown-panel .p-dropdown-item:hover {
+    background-color: #f3f4f6 !important;
+    transform: translateX(4px) !important;
+}
+
+.custom-dropdown-panel .p-dropdown-item.p-highlight {
+    background-color: #3b82f6 !important;
+    color: white !important;
+}
+
+.p-dropdown {
+    border-radius: 12px !important;
+    border: 2px solid #e5e7eb !important;
+    transition: all 0.3s ease !important;
+}
+
+.p-dropdown:hover {
+    border-color: #3b82f6 !important;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
+}
+
+.p-dropdown.p-focus {
+    border-color: #3b82f6 !important;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2) !important;
+}
+
+.p-dropdown-label {
+    padding: 12px 16px !important;
+    font-weight: 500 !important;
+}
+
+.p-dropdown-trigger {
+    padding: 12px 16px !important;
+}

@@ -11,13 +11,13 @@ class Services {
 		return result[0];
 	}
 
-	static async createServices(name, service_type, description, price) {
-		const [result] = await db.execute('INSERT INTO services (name, service_type, description, price) VALUES (?, ?, ?, ?)', [ name, service_type, description, price ]);
+	static async createServices(category_id, name, description, price) {
+		const [result] = await db.execute('INSERT INTO services (category_id, name, description, price) VALUES (?, ?, ?, ?)', [ category_id, name, description, price ]);
 		return result.insertId;
 	}
 
-	static async updateServices(id, name, service_type, description, price) {
-		const [result] = await db.execute("UPDATE services SET name = ?, service_type = ?, description = ?, price = ? WHERE id = ?", [name, service_type, description, price, id]);
+	static async updateServices(id, category_id, name, description, price) {
+		const [result] = await db.execute("UPDATE services SET category_id = ?, name = ?, description = ?, price = ? WHERE id = ?", [category_id, name, description, price, id]);
 		return result.affectedRows > 0;
 	}
 

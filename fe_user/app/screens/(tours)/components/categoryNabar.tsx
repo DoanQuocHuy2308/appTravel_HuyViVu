@@ -1,13 +1,12 @@
 import React from 'react';
 import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
-
-interface CategoryNavbarProps {
-    categories: string[];
-    selectedCategory: string;
-    onSelectCategory: (category: string) => void;
+import { Location } from '@/types';
+interface LocationProps{
+    location: Location[];
+    selectedLocation: number;
+    onSelectLocation: (id: number) => void;
 }
-
-const CategoryNavbar: React.FC<CategoryNavbarProps> = ({ categories, selectedCategory, onSelectCategory }) => {
+const CategoryNavbar: React.FC<LocationProps> = ({ location, selectedLocation, onSelectLocation }) => {
     return (
         <View>
             <ScrollView
@@ -15,16 +14,16 @@ const CategoryNavbar: React.FC<CategoryNavbarProps> = ({ categories, selectedCat
                 showsHorizontalScrollIndicator={false}
                 contentContainerStyle={{ paddingHorizontal: 16, paddingVertical: 10, gap: 12 }}
             >
-                {categories.map((category, index) => {
-                    const isSelected = selectedCategory === category;
+                {location?.map((item, index) => {
+                    const isSelected = selectedLocation === item.id;
                     return (
                         <TouchableOpacity
-                            key={index}
-                            onPress={() => onSelectCategory(category)}
+                            key={item.id || index}
+                            onPress={() => onSelectLocation(item.id)}
                             className={`px-4 py-2 rounded-full border ${isSelected ? 'bg-[#08703f] border-[#08703f]' : 'bg-white border-gray-300'}`}
                         >
                             <Text className={`font-semibold ${isSelected ? 'text-white' : 'text-gray-600'}`}>
-                                {category}
+                                {item.name}
                             </Text>
                         </TouchableOpacity>
                     );
@@ -33,5 +32,6 @@ const CategoryNavbar: React.FC<CategoryNavbarProps> = ({ categories, selectedCat
         </View>
     );
 };
+
 
 export default CategoryNavbar;

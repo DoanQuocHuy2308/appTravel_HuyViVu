@@ -11,13 +11,13 @@ class Promotions {
 		return result[0];
 	}
 
-	static async createPromotions(code, description, discount, start_date, end_date, status) {
-		const [result] = await db.execute('INSERT INTO promotions (code, description, discount, start_date, end_date, status) VALUES (?, ?, ?, ?, ?, ?)', [ code, description, discount, start_date, end_date, status ]);
+	static async createPromotions(code, description, discount, max_count, start_date, end_date, status) {
+		const [result] = await db.execute('INSERT INTO promotions (code, description, discount, max_count, start_date, end_date, status) VALUES (?, ?, ?, ?, ?, ?, ?)', [ code, description, discount, max_count, start_date, end_date, status ]);
 		return result.insertId;
 	}
 
-	static async updatePromotions(id, code, description, discount, start_date, end_date, status) {
-		const [result] = await db.execute("UPDATE promotions SET code = ?, description = ?, discount = ?, start_date = ?, end_date = ?, status = ? WHERE id = ?", [code, description, discount, start_date, end_date, status, id]);
+	static async updatePromotions(id, code, description, discount, max_count, start_date, end_date, status) {
+		const [result] = await db.execute("UPDATE promotions SET code = ?, description = ?, discount = ?, max_count = ?, start_date = ?, end_date = ?, status = ? WHERE id = ?", [code, description, discount, max_count, start_date, end_date, status, id]);
 		return result.affectedRows > 0;
 	}
 

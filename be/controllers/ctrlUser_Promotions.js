@@ -23,15 +23,28 @@ exports.getUser_PromotionsById = async (req, res) =>{
 	};
 };
 
+exports.getAllPromotionByUserID = async (req, res) => {
+	try {
+		const user_promotions = await User_Promotions.getAllPromotionByUserID(req.query.id);
+		res.status(200).send(user_promotions);
+	} catch (error) {
+		res.status(500).send({ message: error.message });
+	};
+};
 exports.createUser_Promotions = async (req, res) => {
 	try {
 		const { user_id, promotion_id, used } = req.body;
-		if (!user_id || !promotion_id || !used) {
+		if (!user_id || !promotion_id) {
 			return res.status(400).json({ message: 'Vui lòng cung cấp đầy đủ thông tin bắt buộc' });
 		}
+		if (typeof used !== 'number') {
+			return res.status(400).json({ message: 'Used phải là số (0 hoặc 1)' });
+		}
+		
 		const user_promotionsId = await User_Promotions.createUser_Promotions( user_id, promotion_id, used );
 		res.status(201).send({ message: 'Tạo thành công', user_promotionsId });
 	} catch (error) {
+		console.error('Backend error:', error);
 		res.status(500).send({ message: 'Lỗi server', error: error.message });
 	};
 };

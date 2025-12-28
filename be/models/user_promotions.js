@@ -7,10 +7,14 @@ class User_Promotions {
 	}
 
 	static async getUser_PromotionsById(id) {
-		const [result] = await db.execute('SELECT * FROM user_promotions WHERE id = ?', [id]);
+		const [result] = await db.execute('CALL GetUser_PromotionsById(?)', [id]);
 		return result[0];
 	}
 
+	static async getAllPromotionByUserID(id) {
+		const [result] = await db.execute('CALL getAllPromotionByUserID(?)', [id]);
+		return result[0];
+	}
 	static async createUser_Promotions(user_id, promotion_id, used) {
 		const [result] = await db.execute('INSERT INTO user_promotions (user_id, promotion_id, used) VALUES (?, ?, ?)', [ user_id, promotion_id, used ]);
 		return result.insertId;

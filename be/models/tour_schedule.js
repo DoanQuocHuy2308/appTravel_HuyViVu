@@ -10,7 +10,10 @@ class Tour_Schedule {
 		const [result] = await db.execute('SELECT * FROM tour_schedule WHERE id = ?', [id]);
 		return result[0];
 	}
-
+	static async getTour_ScheduleByIdTour(id) {
+		const [result] = await db.execute('SELECT * FROM tour_schedule WHERE tour_id = ?', [id]);
+		return result;
+	}
 	static async createTour_Schedule(tour_id, day_number, title, description) {
 		const [result] = await db.execute('INSERT INTO tour_schedule (tour_id, day_number, title, description) VALUES (?, ?, ?, ?)', [ tour_id, day_number, title, description ]);
 		return result.insertId;

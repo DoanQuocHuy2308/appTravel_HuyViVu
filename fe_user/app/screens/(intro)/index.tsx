@@ -22,31 +22,32 @@ type Slide = {
 const slides: Slide[] = [
   {
     key: "1",
-    title: "WELCOME TO HUY VI VU",
-    text: "Start your journey with Huy Vi Vu – where traveling is not just about moving from place to place, but about discovering, experiencing, and creating unforgettable memories. We are here to be your trusted companion on every adventure.",
+    title: "CHÀO MỪNG ĐẾN VỚI HUY VI VU",
+    text: "Bắt đầu hành trình của bạn cùng Huy Vi Vu – nơi việc du lịch không chỉ là di chuyển từ nơi này đến nơi khác, mà còn là hành trình khám phá, trải nghiệm và tạo nên những kỷ niệm khó quên. Chúng tôi ở đây để trở thành người bạn đồng hành đáng tin cậy của bạn trên mọi chuyến đi.",
     image: require("@/assets/images/bg1.png"),
   },
   {
     key: "2",
-    title: "Explore the World",
-    text: "From untouched rainforests and crystal-clear beaches to the most vibrant and modern cities across the globe – choose from over 1,000 unique tours across 5 continents. Every destination is waiting to be explored by you.",
+    title: "Khám Phá Thế Giới",
+    text: "Từ những khu rừng nguyên sinh, bãi biển trong xanh cho đến các thành phố hiện đại và sôi động nhất trên thế giới – hãy lựa chọn trong hơn 1.000 tour độc đáo trên 5 châu lục. Mỗi điểm đến đều đang chờ bạn khám phá.",
     image: require("@/assets/images/index1.jpg"),
   },
   {
     key: "3",
-    title: "Easy Tour Booking",
-    text: "Booking your dream trip has never been easier. With just a few taps, you can search, compare, and reserve the perfect tour. Our app is designed to save you time while giving you the best options at your fingertips.",
+    title: "Đặt Tour Dễ Dàng",
+    text: "Việc đặt chuyến đi mơ ước chưa bao giờ đơn giản đến thế. Chỉ với vài thao tác, bạn có thể tìm kiếm, so sánh và đặt ngay tour phù hợp nhất. Ứng dụng của chúng tôi được thiết kế để tiết kiệm thời gian và mang đến cho bạn những lựa chọn tốt nhất.",
     image: require("@/assets/images/bg2.png"),
   },
   {
     key: "4",
-    title: "Attractive Deals",
-    text: "Enjoy your travels without breaking the bank. Take advantage of exclusive discounts, special travel combos, and unique gifts crafted just for you. With Huy Vi Vu, every trip is not only memorable but also affordable.",
+    title: "Ưu Đãi Hấp Dẫn",
+    text: "Tận hưởng chuyến du lịch mà không lo về chi phí. Nhận ngay những ưu đãi độc quyền, combo du lịch đặc biệt và quà tặng hấp dẫn dành riêng cho bạn. Với Huy Vi Vu, mỗi hành trình không chỉ đáng nhớ mà còn thật tiết kiệm.",
     image: require("@/assets/images/index2.jpg"),
   },
 ];
 
-export default function index() {
+
+export default function Index() {
   const router = useRouter();
   const renderItem = ({ item }: { item: Slide }) => (
     <ImageBackground

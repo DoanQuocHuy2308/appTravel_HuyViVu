@@ -11,6 +11,11 @@ class Image_Tour {
 		return result[0];
 	}
 
+	static async getImage_TourByIdTour(tour_id) {
+		const [result] = await db.execute('SELECT * FROM image_tour WHERE tour_id = ?', [tour_id]);
+		return result;
+	}
+
 	static async createImage_Tour(tour_id, image) {
 		const [result] = await db.execute('INSERT INTO image_tour (tour_id, image) VALUES (?, ?)', [ tour_id, image ]);
 		return result.insertId;
@@ -24,6 +29,26 @@ class Image_Tour {
 	static async deleteImage_Tour(id) {
 		const [result] = await db.execute('DELETE FROM image_tour WHERE id = ?', [id]);
 		return result.affectedRows > 0;
+	}
+
+	static async deleteImage_TourByIdTour(tour_id) {
+		const [result] = await db.execute('SELECT * FROM image_tour WHERE tour_id = ?', [tour_id]);
+		const images = result;
+		await db.execute('DELETE FROM image_tour WHERE tour_id = ?', [tour_id]);
+		return images;
+	}
+
+	static async createMultipleImage_Tour(tour_id, images) {
+		// Tạo câu query để insert nhiều ảnh cùng lúc
+		const values = images.map(image => [tour_id, image]);
+		const placeholders = values.map(() => '(?, ?)').join(', ');
+		const flatValues = values.flat();
+		
+		const [result] = await db.execute(
+			`INSERT INTO image_tour (tour_id, image) VALUES ${placeholders}`,
+			flatValues
+		);
+		return result.insertId;
 	}
 
 };

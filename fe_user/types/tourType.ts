@@ -1,12 +1,12 @@
-export interface ItineraryActivity {
-    time: string;
-    activity: string;
-}
-
 export interface ItineraryDay {
     day: string;
     title: string;
-    data: ItineraryActivity[];
+    data: ItineraryItem[];
+}
+
+export interface ItineraryItem {
+    time: string;
+    activity: string;
 }
 
 export interface Note {
@@ -15,18 +15,24 @@ export interface Note {
 }
 
 export interface Tour {
+    description: string;
+    highlights: string[];
+    includes: string[];
+    excludes: string[];
+}
+
+export interface TourDetail {
     id: number;
-    title: string;
-    location: string;
-    duration: string;
-    rating: number;
-    reviews: number;
-    price: string;
-    images: string[];
+    name: string;
     description: string;
     highlights: string[];
     includes: string[];
     excludes: string[];
     itinerary: ItineraryDay[];
     notes: Note[];
+    price: number;
+    duration: string;
+    location: string;
+    rating: number;
+    image: string;
 }

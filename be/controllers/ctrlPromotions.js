@@ -25,11 +25,11 @@ exports.getPromotionsById = async (req, res) =>{
 
 exports.createPromotions = async (req, res) => {
 	try {
-		const { code, description, discount, start_date, end_date, status } = req.body;
-		if (!code || !description || !discount || !start_date || !end_date || !status) {
+		const { code, description, discount, max_count, start_date, end_date, status } = req.body;
+		if (!code || !description || !discount || !max_count || !start_date || !end_date || !status) {
 			return res.status(400).json({ message: 'Vui lòng cung cấp đầy đủ thông tin bắt buộc' });
 		}
-		const promotionsId = await Promotions.createPromotions( code, description, discount, start_date, end_date, status );
+		const promotionsId = await Promotions.createPromotions( code, description, discount, max_count, start_date, end_date, status );
 		res.status(201).send({ message: 'Tạo thành công', promotionsId });
 	} catch (error) {
 		res.status(500).send({ message: 'Lỗi server', error: error.message });
@@ -39,11 +39,11 @@ exports.createPromotions = async (req, res) => {
 exports.updatePromotions = async (req, res) => {
 	try {
 		const { id } = req.query;
-		const { code, description, discount, start_date, end_date, status } = req.body;
-		if (!code ||!description ||!discount ||!start_date ||!end_date ||!status) {
+		const { code, description, discount, max_count, start_date, end_date, status } = req.body;
+		if (!code ||!description ||!discount ||!max_count ||!start_date ||!end_date ||!status) {
 			return res.status(400).send({ message: 'Vui lòng cung cấp đầy đủ thông tin bắt buộc' });
 		}
-		const updatedPromotions = await Promotions.updatePromotions(id,code, description, discount, start_date, end_date, status);
+		const updatedPromotions = await Promotions.updatePromotions(id,code, description, discount, max_count, start_date, end_date, status);
 		if (!updatedPromotions){
 			return res.status(404).send({ message: 'Promotions not found' });
 		}
